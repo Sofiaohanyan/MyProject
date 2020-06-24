@@ -1,0 +1,79 @@
+<section>
+    <div class="user">
+        <h1>{{data?.name}}</h1> 
+        <h2><span>UserName:</span>{{data?.username}}</h2> 
+        <h2><span>Email:</span> {{data?.email}}</h2> 
+        <h2><span>website:</span>{{data?.website}}</h2>
+        <h2><span>Phone:</span>{{data?.phone}}</h2>
+    </div>
+   <div class="user-address">
+        <span>Address:</span>
+       <p><span>city:</span>{{data?.address.city}}</p>
+       <p><span>street:</span>{{data?.address.street}}</p>
+       <p><span>suite:</span>{{data?.address.suite}}</p>
+       <p><span>zipcode:</span>{{data?.address.zipcode}}</p>
+       <div>
+           <span>user address geo</span>
+            <p><span>geo lat:</span>{{data?.address.geo.lat}}</p>
+            <p><span>geo lng:</span>{{data?.address.geo.lng}}</p>
+       </div>
+   </div> 
+   <div class="user-company">
+    <span>Company:</span>
+        <p><span>company Name:</span>{{data?.company.name}}</p>
+        <p><span>company bs:</span>{{data?.company.bs}}</p>
+        <p><span>company catchPhrase:</span>{{data?.company.catchPhrase}}</p>
+    </div>
+
+</section>
+
+<div class="form">
+    <form  [formGroup]="form"  *ngIf="condition"  (submit)= 'Edit()'>
+        <div class="form-box">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type='text' placeholder="Name" formControlName='name'>
+                </div>
+                <div class="form-group">
+                    <label for="">UserName</label>
+                    <input type='text' placeholder="userName"  formControlName='username'>
+                </div> 
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type='text' placeholder="phone"  formControlName='phone'>
+                </div> 
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type='text' placeholder="email"  formControlName='email'>
+                </div> 
+                <div class="form-group">
+                    <label for="">Website</label>
+                    <input type='text' placeholder="userName"  formControlName='website'>
+                </div>
+                <div class="address" formGroupName='address'>
+                    <div class="form-group" >
+                        <label for="">Adsress</label>
+                        <input type='text' placeholder= 'city'  formControlName='city'>
+                        <input type='text' placeholder= 'street'  formControlName='street'>
+                        <input type='text' placeholder= 'suite'  formControlName='suite'>
+                        <input type='text' placeholder= 'zipcode'  formControlName='zipcode'>
+                    </div> 
+                    <div class="form-group" formGroupName='geo'>
+                        <label for="">Geo</label>
+                        <input type='text' placeholder= 'lar'  formControlName='lat'>
+                        <input type='text' placeholder= 'lng'  formControlName='lng'>
+                    </div>
+                 </div>
+                 <div class="form-group" formGroupName='company'>
+                    <label for="">Company</label>
+                    <input type='text' placeholder= 'CompanyName'  formControlName='name'>
+                    <input type='text' placeholder= 'catchPhrase'  formControlName='catchPhrase'>
+                    <input type='text' placeholder= 'bs'  formControlName='bs'>
+                </div>
+            </div>    
+        <button [disabled]="form.invalid">Update user</button>
+    </div>
+    </form>     
+</div>
+<button type="button" class="edit" (click)='Update(data)'>Update User</button>

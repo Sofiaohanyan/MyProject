@@ -1,0 +1,55 @@
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>UserName</th>
+        <th>Change</th>
+
+    </tr>
+    <tr *ngFor="let key of data" (dblclick)='show(key.id)'>
+        <td>{{key.id}}.</td>
+        <td>{{key.name}}</td>
+        <td>{{key.email}}</td>
+        <td>{{key.phone}}</td>
+        <td>{{key.username}}</td>
+
+        <td>
+            <button type="button" (click)='Update(key)'>Update</button>
+            <button type="button" class="delete" (click)='Delete(key.id)'>Delete</button>
+        </td>
+    </tr>
+</table>
+<button type="button" class="edit" (click)='flag = false; condition = !condition'>Add User</button>
+
+<div>
+    <form  (submit)= 'Edit()'*ngIf="condition" [formGroup]="form" >
+        <div class="form-box">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type='text' placeholder="Name" formControlName='name' >
+                </div>  
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type='text' placeholder="phone"  formControlName='phone'>
+                </div> 
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type='text' placeholder="email"  formControlName='email'>
+                </div> 
+                <div class="form-group">
+                    <label for="">UserName</label>
+                    <input type='text' placeholder="userName"  formControlName='username'>
+                </div>
+                <div class="form-group">
+                    <label for="">WebSite</label>
+                    <input type='text' placeholder="website"  formControlName='website'>
+                </div>
+            </div>
+            <button [disabled]="form.invalid">{{!flag ? 'Add user' : 'Update user'}}</button>
+        </div>
+    </form>      
+</div>
+  

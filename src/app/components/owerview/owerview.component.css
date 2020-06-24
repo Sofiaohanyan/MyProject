@@ -1,0 +1,106 @@
+*{
+    margin:0;
+    padding: 0;
+    border:0;
+}
+table{
+    margin:50px auto;
+    border-collapse: collapse;
+    background: linear-gradient(20deg,rgba(179, 147, 176, 0.5), rgba(147, 177, 184, 0.3));
+}
+table td, th{
+    padding: 10px;
+}
+table tr:first-child{
+    background-color:rgb(178, 147, 179) ;
+    color:white;
+}
+table th{
+    border:2px solid rgba(179, 147, 176)
+}
+table tr{
+    border-bottom: 1px solid rgb(176, 150, 184);
+}
+table td:first-child{
+    color: red;
+    font-weight: bold;
+}
+table td button, .edit{
+    color:white;
+    background-color: rgb(176, 150, 184);
+    border:1px solid;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin:5px auto;
+}
+table td .delete{
+    background-color: rgba(63, 139, 156);
+}
+.edit{
+    position: fixed;
+    right: 10px;
+    bottom:10px;
+    width: 200px;
+}
+
+form{
+    position: fixed;
+    background-color: rgba(146, 201, 214, 0.5);
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    padding-top: 100px;
+    transition: .5s;
+    text-align: center;
+}
+form input{
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin: 10px 0;
+    background-color: transparent;
+    border-bottom: 2px solid rgb(178, 147, 179);
+}
+form label{
+    color: rgb(178, 147, 179);
+    font-size: 25px;
+    display: block;
+}
+form button{
+    background-color:rgb(178, 147, 179);
+    width: 40%;
+    font-size: 25px;
+    padding:10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+form .form-box{
+    background-color:rgba(255, 255, 255, 0.915);
+    width: 80%;
+    margin:auto;
+    padding:50px 10px;
+    border-radius: 10px;
+    border:1px solid rgb(178, 147, 179);
+}
+form .form-box>div{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    margin-bottom: 50px;
+}
+form .form-box>div{
+    margin:10px
+}
+
+
+.show{
+    transform: scale(1);
+}
+.hide{
+    transform: scale(0);
+}
+
+
